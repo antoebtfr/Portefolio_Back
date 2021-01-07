@@ -16,7 +16,6 @@ async function startServer() {
     }
 
 
-    console.log(process.env.DB_PASS);
 }
 
 startServer();
