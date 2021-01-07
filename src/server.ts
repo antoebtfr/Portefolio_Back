@@ -15,6 +15,8 @@ async function startServer() {
         console.log('>>> Le serveur a rencontrer une erreur : ' + e);
     }
 
+
+    console.log(process.env.DB_PASS);
 }
 
 startServer();
