@@ -5,14 +5,14 @@ export default async () => {
     await createConnection({
         type: 'mysql',
         host: 'localhost',
-        username: process.env.DB_USERNAME,
-        password: process.env.DB_PASS,
-        database: process.env.DB_NAME,
+        username: 'root',
+        password: 'Livredepoche18;',
+        database: 'paul',
         entities : [
             Test
         ],
         synchronize: true,
-        logging: true,
+        logging: false,
     }).then(connection => {
 
 
