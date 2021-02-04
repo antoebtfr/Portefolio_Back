@@ -4,10 +4,10 @@ import { Test } from "../entities/Test";
 export default async () => {
     await createConnection({
         type: 'mysql',
-        host: 'localhost',
-        username: 'root',
-        password: 'Livredepoche18;',
-        database: 'paul',
+        host: 'db4free.net',
+        username: 'dev_cube',
+        password: 'Livredepoche18',
+        database: 'projet_cube',
         entities : [
             Test
         ],
