@@ -1,5 +1,12 @@
 import { createConnection } from "typeorm"
+import { Commentary } from "../entities/Commentary";
+import { Country } from "../entities/Country";
+import { Relation } from "../entities/Relation";
+import { Ressource } from "../entities/Ressource";
 import { Test } from "../entities/Test";
+import { Token } from "../entities/Token";
+import { Type } from "../entities/Type";
+import { User } from "../entities/User";
 
 export default async () => {
     await createConnection({
@@ -8,8 +15,15 @@ export default async () => {
         username: 'dev_cube',
         password: 'Livredepoche18',
         database: 'projet_cube',
-        entities : [
-            Test
+        entities: [
+            Test,
+            Country,
+            Token,
+            User,
+            Commentary,
+            Ressource,
+            Type,
+            Relation
         ],
         synchronize: true,
         logging: false,
@@ -20,5 +34,5 @@ export default async () => {
     }).catch(err => {
         console.log('Something wrong happened with TYPEORM : ' + err);
     })
-        
+
 }
