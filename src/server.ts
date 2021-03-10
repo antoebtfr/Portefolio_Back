@@ -1,9 +1,12 @@
 import express from 'express';
+import loaders from './loaders';
 import { TestController } from './controllers/test.controller';
 import { CountryController } from './controllers/country.controller';
 import { UserController} from './controllers/user.controller';
-import loaders from './loaders';
-import { User } from './entities/User';
+import { CommentaryController } from './controllers/commentary.controller';
+import { RelationController } from './controllers/relation.controller';
+import { RessourceController } from './controllers/ressource.controller';
+import { TokenController } from './controllers/token.controller';
 
 
 async function startServer() {
@@ -15,6 +18,10 @@ async function startServer() {
     TestController(app);
     CountryController(app);
     UserController(app);
+    CommentaryController(app);
+    RelationController(app);
+    RessourceController(app);
+    TokenController(app);
 
     try {
         app.listen(PORT, () => {

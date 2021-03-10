@@ -7,18 +7,18 @@ export class Commentary {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'int' })
     author!: User; 
     
     @Column({ type : 'varchar', length: 100, default: ''})
     text?: string; 
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp' })
     createdAt?: Date;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp' })
     updatedAt?: Date;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp' })
     deleteAt?: Date;
 }
