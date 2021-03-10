@@ -14,11 +14,11 @@ export class User {
     @Column({ type : 'varchar', length: 100, default: ''})
     firstname!: string;
 
-    @Column({ type: 'varchar', length: 100, default: ''})
-    role!: string;
+    @Column({ type: 'varchar', length: 100, default: 'user'})
+    role?: string;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
-    country?: Country;
+    @Column({ type : 'int', default: 1})
+    countryId?: Country;
 
     @Column({ type : 'varchar', length: 100, default: ''})
     phonenumber?: string;
@@ -29,19 +29,19 @@ export class User {
     @Column({ type : 'varchar', length: 100, default: ''})
     password?: string;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp'})
     birthday?: Date;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp'})
     createdAt?: Date;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp'})
     deletedAt?: Date;
 
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'timestamp'})
     updatedAt?: Date;
     
-    @Column({ type : 'varchar', length: 100, default: ''})
+    @Column({ type : 'boolean', default: false})
     isConfirmed?: boolean;
 
     @Column({ type : 'varchar', length: 100, default: ''})
