@@ -11,10 +11,10 @@ import { User } from "../entities/User";
 export default async () => {
     await createConnection({
         type: 'mysql',
-        host: 'db4free.net',
-        username: 'dev_cube',
-        password: 'Livredepoche18',
-        database: 'projet_cube',
+        host: 'sql11.freesqldatabase.com',
+        username: 'sql11397928',
+        password: 'BTFtL3qfYF',
+        database: 'sql11397928',
         entities: [
             Test,
             Country,
@@ -28,8 +28,6 @@ export default async () => {
         synchronize: true,
         logging: false,
     }).then(connection => {
-
-
         console.log('typeOrm initialized');
     }).catch(err => {
         console.log('Something wrong happened with TYPEORM : ' + err);
