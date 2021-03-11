@@ -1,32 +1,12 @@
 import { Application, Request, Response, Router } from "express";
-import { UserService } from "../services/User.service";
+import { AuthService } from "../services/Auth.service";
 
 export const LoginController = (app: Application) => {
-    const service = new UserService;
+    const service = new AuthService;
     const router = Router();
 
     router.post('', async (req: Request, res: Response) => {
-        let users = await service.get();
-        let exist = false
-        let user = {}
-        for(let elm of users){
-            if(elm.email == req.body.email){
-                if(elm.password == req.body.password){
-                    user = elm;
-                }else{
-                    user = {
-                        'error':'Le mot de passe saisi est incorrect'
-                    };
-                }
-                exist = true
-            }
-        }
-        if(!exist){
-            user = {
-                'error':'Aucun compte n\'est enregistré avec cette adresse'
-            }
-        }
-        res.send(user)
+        res.send(await service.login(req.body));
     })
 
     app.use('/login', router);
