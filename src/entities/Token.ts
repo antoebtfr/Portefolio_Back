@@ -7,7 +7,7 @@ export class Token {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ type : 'varchar', length: 50, default: '',})
+    @Column({ type : 'int' })
     userId?: User; 
     
     @Column({ type : 'varchar', length: 100, default: '',})

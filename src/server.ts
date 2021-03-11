@@ -7,6 +7,7 @@ import { CommentaryController } from './controllers/commentary.controller';
 import { RelationController } from './controllers/relation.controller';
 import { RessourceController } from './controllers/ressource.controller';
 import { TokenController } from './controllers/token.controller';
+import { TypeController } from './controllers/type.controller';
 
 
 async function startServer() {
@@ -22,6 +23,7 @@ async function startServer() {
     RelationController(app);
     RessourceController(app);
     TokenController(app);
+    TypeController(app);
 
     try {
         app.listen(PORT, () => {

@@ -11,10 +11,10 @@ export class Ressource {
     @Column({ type: 'varchar', length: 50, default: '' })
     title!: string;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'int' })
     rel?: Relation;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'int' })
     type?: Type;
 
     @Column({ type: 'varchar', length: 50, default: '' })
@@ -26,12 +26,12 @@ export class Ressource {
     @Column({ type: 'varchar', length: 50, default: '' })
     cat?: string;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'timestamp' })
     createAt?: Date;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'timestamp' })
     updateAt?: Date;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'timestamp' })
     deleteAt?: Date;
 }

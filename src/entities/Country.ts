@@ -7,5 +7,5 @@ export class Country {
     id!: number;
 
     @Column({ type : 'varchar', length: 100, default: '',})
-    name?: string;
+    name!: string;
 }
