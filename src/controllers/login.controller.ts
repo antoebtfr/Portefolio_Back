@@ -15,7 +15,7 @@ export const LoginController = (app: Application) => {
                     user = elm;
                 }else{
                     user = {
-                        'error':'Wrong password.'
+                        'error':'Le mot de passe saisi est incorrect'
                     };
                 }
                 exist = true
@@ -23,7 +23,7 @@ export const LoginController = (app: Application) => {
         }
         if(!exist){
             user = {
-                'error':'Unknown user.'
+                'error':'Aucun compte n\'est enregistré avec cette adresse'
             }
         }
         res.send(user)
