@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { Relation } from "./Relation";
 import { Type } from "./Type";
 
-@Entity()
+@Entity('ressources')
 
 export class Ressource {
     @PrimaryGeneratedColumn()
