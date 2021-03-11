@@ -8,6 +8,8 @@ import { RelationController } from './controllers/relation.controller';
 import { RessourceController } from './controllers/ressource.controller';
 import { TokenController } from './controllers/token.controller';
 import { TypeController } from './controllers/type.controller';
+import { LoginController } from './controllers/login.controller';
+import { SignupController } from './controllers/signup.controller';
 
 
 async function startServer() {
@@ -24,6 +26,8 @@ async function startServer() {
     RessourceController(app);
     TokenController(app);
     TypeController(app);
+    LoginController(app);
+    SignupController(app);
 
     try {
         app.listen(PORT, () => {
