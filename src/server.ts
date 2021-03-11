@@ -8,7 +8,7 @@ import { RelationController } from './controllers/relation.controller';
 import { RessourceController } from './controllers/ressource.controller';
 import { TokenController } from './controllers/token.controller';
 import { TypeController } from './controllers/type.controller';
-import { LoginController } from './controllers/login.controller';
+import { AuthController } from './controllers/Auth.controller';
 import { SignupController } from './controllers/signup.controller';
 
 
@@ -26,7 +26,7 @@ async function startServer() {
     RessourceController(app);
     TokenController(app);
     TypeController(app);
-    LoginController(app);
+    AuthController(app);
     SignupController(app);
 
     try {
