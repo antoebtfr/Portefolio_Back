@@ -27,7 +27,7 @@ export class AuthService {
                     };
                 }else{
                     user = {
-                        'error':'Wrong password.'
+                        'error':'Le mot de passe est incorrect',
                     };
                 }
                 exist = true
@@ -35,7 +35,7 @@ export class AuthService {
         }
         if(!exist){
             user = {
-                'error':'Unknown user.'
+                'error':'L\'adresse mail saisie n\'est associée à aucun compte',
             };
         }
         return user;
