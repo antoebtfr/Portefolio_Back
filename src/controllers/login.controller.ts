@@ -10,7 +10,7 @@ export const LoginController = (app: Application) => {
         let exist = false
         let user = {}
         for(let elm of users){
-            if(elm.email == req.body.email && elm.password == req.body.password){
+            if(elm.email == req.body.email){
                 if(elm.password == req.body.password){
                     user = elm;
                 }else{
