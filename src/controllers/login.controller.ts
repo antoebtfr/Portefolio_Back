@@ -7,14 +7,26 @@ export const LoginController = (app: Application) => {
 
     router.post('', async (req: Request, res: Response) => {
         let users = await service.get();
-        let login = false
+        let exist = false
+        let user = {}
         for(let elm of users){
             if(elm.email == req.body.email && elm.password == req.body.password){
-                login = true
-                break
+                if(elm.password == req.body.password){
+                    user = elm;
+                }else{
+                    user = {
+                        'error':'Wrong password.'
+                    };
+                }
+                exist = true
             }
         }
-        res.send(login)
+        if(!exist){
+            user = {
+                'error':'Unknown user.'
+            }
+        }
+        res.send(user)
     })
 
     app.use('/login', router);
