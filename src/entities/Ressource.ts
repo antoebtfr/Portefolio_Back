@@ -15,7 +15,7 @@ export class Ressource {
     rel?: Relation;
 
     @Column({ type: 'int' })
-    type?: Type;
+    typeId?: Type;
 
     @Column({ type: 'varchar', length: 50, default: '' })
     cont?: string;
