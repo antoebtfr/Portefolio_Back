@@ -14,4 +14,9 @@ export class UserService {
         return this.repo.save(User);
     }
 
+    async activeUserAccount(user: User){
+        user.isConfirmed = true; 
+        this.repo.update(user.id, user);
+    }
+
 }

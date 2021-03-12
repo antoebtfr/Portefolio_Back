@@ -28,5 +28,17 @@ export const AuthController = (app: Application) => {
 
     })
 
+
+    router.get('/confirmation/:token', (req: Request, res: Response) => {
+        const tokenStr = req.params.token;
+
+        try {
+            service.confirmation(tokenStr);
+            res.sendStatus(204);
+        } catch (error) {
+            res.sendStatus(400);
+        }
+    });
+
     app.use('/auth', router);
 }

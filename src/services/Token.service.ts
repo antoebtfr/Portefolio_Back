@@ -5,8 +5,8 @@ import { TokenRepository } from "../repositories/token.repository";
 export class TokenService {
     protected repo = getCustomRepository(TokenRepository);
 
-    get(){
-        return this.repo.find();
+    get(token: string){
+        return this.repo.findOne({key: token}, {relations: ['user']});
     }
 
     post(Token: Token){

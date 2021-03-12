@@ -6,6 +6,7 @@ import { User } from "../entities/User";
 import { UserRepository } from "../repositories/user.repository";
 import { Settings } from "../settings";
 import { TokenService } from "./Token.service";
+import { UserService } from "./User.service";
 
 export class AuthService {
 
@@ -13,6 +14,7 @@ export class AuthService {
     protected repo = getCustomRepository(UserRepository);
     private settings = new Settings;
     private tokenService = new TokenService;
+    private userService = new UserService;
 
     async login(body : any){
         let users = await this.repo.find();
@@ -92,7 +94,7 @@ export class AuthService {
         await this.nodemailer(tokenString, user);
 
         const token = new Token;
-        token.userId = user;
+        token.user = user;
         token.key = tokenString;
         this.tokenService.post(token);
 
@@ -114,6 +116,7 @@ export class AuthService {
         });
 
         const serverConfirmationLink = this.settings.getServerLink(3000) + '/auth/confirmation/' + token;
+        console.log(serverConfirmationLink);
 
         const info = await transporter.sendMail({
             from: '<antoebt@hotmail.com>', //testws20 - Creer une adresse mail pour Opibus
@@ -125,6 +128,16 @@ export class AuthService {
 
         console.log('Message send to: %s', user.email);
         console.log('Preview URL: %s', getTestMessageUrl(info));
+    }
+
+    
+    async confirmation(tokenStr: string){
+        const token = await this.tokenService.get(tokenStr);
+        if(!token){
+            throw {id : 7};
+        }
+
+        await this.userService.activeUserAccount(token.user);
     }
 
 }

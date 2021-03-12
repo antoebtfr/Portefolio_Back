@@ -9,7 +9,7 @@ export class Token {
 
     @OneToOne(type => User)
     @JoinColumn()
-    userId!: User; 
+    user!: User; 
     
     @Column({ type : 'varchar', length: 100, default: '',})
     key!: string; 
