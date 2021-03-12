@@ -3,7 +3,6 @@ import { Commentary } from "../entities/Commentary";
 import { Country } from "../entities/Country";
 import { Relation } from "../entities/Relation";
 import { Ressource } from "../entities/Ressource";
-import { Test } from "../entities/Test";
 import { Token } from "../entities/Token";
 import { Type } from "../entities/Type";
 import { User } from "../entities/User";
@@ -16,7 +15,6 @@ export default async () => {
         password: 'BTFtL3qfYF',
         database: 'sql11397928',
         entities: [
-            Test,
             Country,
             Token,
             User,
