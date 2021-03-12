@@ -120,7 +120,7 @@ export class AuthService {
             from: '<antoebt@hotmail.com>', //testws20 - Creer une adresse mail pour Opibus
             to: user.email,
             subject: 'OPIBUS - Lien de confirmation',
-            text: '',
+            text: 'Hello World',
             html: '<b> Veuillez confirmer votre compte en cliquant sur ce lien d\'activation de compte : <a href="'+ serverConfirmationLink + '"> Lien de confirmation</a></b> '
         });
 
