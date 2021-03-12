@@ -5,10 +5,6 @@ export const TokenController = (app: Application) => {
     const service = new TokenService;
     const router = Router();
 
-    router.get('', async (req: Request, res: Response) => {
-        res.send(await service.get());
-    })
-
     router.post('', async (req: Request, res: Response) => {
         res.send(await service.post(req.body));
     })
