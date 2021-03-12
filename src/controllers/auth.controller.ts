@@ -12,7 +12,20 @@ export const AuthController = (app: Application) => {
 
     router.post('/signup', async (req: Request, res: Response) => {
 
-        res.send(await service.signup(req.body));
+        const userInfo = req.body;
+
+        try {
+            await service.signup(userInfo);
+            res.sendStatus(204);
+        } catch (error) {
+            if (error.id === 1) {
+                res.status(408).send('Informations déjà utilisées');
+                return;
+            }
+
+            res.send(409).send('Erreur lors de l\'inscription >>> Error : \n ' + error);
+        }
+
     })
 
     app.use('/auth', router);

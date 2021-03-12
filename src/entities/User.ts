@@ -24,7 +24,7 @@ export class User {
     phonenumber?: string;
 
     @Column({ type : 'varchar', length: 100, default: ''})
-    email?: string;
+    email!: string;
 
     @Column({ type : 'varchar', length: 150, default: ''})
     password?: string;

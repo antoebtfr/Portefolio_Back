@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./User";
 
 @Entity('tokens')
@@ -7,8 +7,9 @@ export class Token {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ type : 'int' })
-    userId?: User; 
+    @OneToOne(type => User)
+    @JoinColumn()
+    userId!: User; 
     
     @Column({ type : 'varchar', length: 100, default: '',})
     key!: string; 
