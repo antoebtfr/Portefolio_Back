@@ -10,5 +10,10 @@ export const AuthController = (app: Application) => {
         res.send(await service.login(req.body));
     })
 
+    router.post('/signup', async (req: Request, res: Response) => {
+
+        res.send(await service.signup(req.body));
+    })
+
     app.use('/auth', router);
 }
