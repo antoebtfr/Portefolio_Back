@@ -10,10 +10,10 @@ import { User } from "../entities/User";
 export default async () => {
     await createConnection({
         type: 'mysql',
-        host: 'sql11.freesqldatabase.com',
-        username: 'sql11397928',
-        password: 'BTFtL3qfYF',
-        database: 'sql11397928',
+        host: 'sql4.freemysqlhosting.net',
+        username: 'sql4408789',
+        password: 'dqBCNMaKu2',
+        database: 'sql4408789',
         entities: [
             Country,
             Token,

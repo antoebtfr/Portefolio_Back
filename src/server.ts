@@ -1,6 +1,6 @@
 import express from 'express';
 import loaders from './loaders';
-import { TestController } from './controllers/test.controller';
+
 import { CountryController } from './controllers/country.controller';
 import { UserController} from './controllers/user.controller';
 import { CommentaryController } from './controllers/commentary.controller';
@@ -18,7 +18,6 @@ async function startServer() {
 
     await loaders(app);
 
-    TestController(app);
     CountryController(app);
     UserController(app);
     CommentaryController(app);
