@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-@Entity('Connections')
+@Entity('connections')
 
 export class Connection {
     @PrimaryGeneratedColumn()
