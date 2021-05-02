@@ -16,8 +16,10 @@ export class UserService {
     }
 
     logIp(connectionLog: Connection){
-        return this.repo.save(connectionLog);
-    }
+        console.log('testws20')
+        this.repo.save(connectionLog);
+        console.log('good');
+        }
 
     async activeUserAccount(user: User){
         user.isConfirmed = true; 
