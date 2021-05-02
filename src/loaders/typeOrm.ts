@@ -1,4 +1,4 @@
-import { createConnection } from "typeorm"
+import { Connection, createConnection } from "typeorm"
 import { Commentary } from "../entities/Commentary";
 import { Country } from "../entities/Country";
 import { Relation } from "../entities/Relation";
@@ -21,7 +21,8 @@ export default async () => {
             Commentary,
             Ressource,
             Type,
-            Relation
+            Relation,
+            Connection
         ],
         synchronize: true,
         logging: false,
