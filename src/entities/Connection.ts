@@ -8,7 +8,7 @@ export class Connection {
     @Column({ type : 'varchar'})
     ipAdress!: string;
 
-    @Column({ type : 'varchar'})
-    dateConnection!: string;
+    @Column({ type : 'timestamp'})
+    dateConnection!: Date;
 
 }
