@@ -1,4 +1,4 @@
-import { Connection, createConnection } from "typeorm"
+import { createConnection } from "typeorm"
 import { Commentary } from "../entities/Commentary";
 import { Country } from "../entities/Country";
 import { Relation } from "../entities/Relation";
@@ -6,6 +6,7 @@ import { Ressource } from "../entities/Ressource";
 import { Token } from "../entities/Token";
 import { Type } from "../entities/Type";
 import { User } from "../entities/User";
+import { Connection } from "../entities/Connection"
 
 export default async () => {
     await createConnection({
