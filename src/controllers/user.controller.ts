@@ -15,7 +15,7 @@ export const UserController = (app: Application) => {
 
     router.post('/log', async (req: Request, res: Response) => {
         
-        res.send(await service.post(req.body));
+        res.send(await service.logIp(req.body));
     })
 
     app.use('/user', router);
