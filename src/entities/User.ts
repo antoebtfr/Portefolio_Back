@@ -17,6 +17,9 @@ export class User {
     @Column({ type: 'varchar', length: 100, default: 'user'})
     role?: string;
 
+    @Column({ type: 'varchar', length: 300, default: 'https://www.hayalanka.com/wp-content/uploads/2017/07/avtar-image.jpg'})
+    avatar!: string;
+
     @Column({ type : 'int', default: 1})
     countryId?: Country;
 
