@@ -13,5 +13,9 @@ export const RessourceController = (app: Application) => {
         res.send(await service.post(req.body));
     })
 
+    router.get('/:id', async (req: Request, res: Response) => {
+        res.send(await service.getAllByUserId(Number(req.params.id)));
+    })
+
     app.use('/ressource', router);
 }

@@ -14,4 +14,8 @@ export class RessourceService {
         return this.repo.save(Ressource);
     }
 
+    getAllByUserId(userId: number){
+        return this.repo.find({where: {typeId : userId}})
+    }
+
 }
