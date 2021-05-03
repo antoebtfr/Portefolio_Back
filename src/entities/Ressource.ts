@@ -17,6 +17,9 @@ export class Ressource {
     @Column({ type: 'int' })
     typeId?: Type;
 
+    @Column({ type: 'int' })
+    userId?: Type;
+
     @Column({ type: 'varchar', length: 10000, default: '' }) // TESTWS20 - varchar to text
     cont?: string;
 
