@@ -34,7 +34,8 @@ export class AuthService {
                         'birthdate':elm.birthdate,
                         'createdAt':elm.createdAt,
                         'updatedAt':elm.updatedAt,
-                        'isConfirmed':elm.isConfirmed
+                        'isConfirmed':elm.isConfirmed,
+                        'avatar': elm.avatar
                     };
                 }else{
                     user = {
@@ -133,6 +134,10 @@ export class AuthService {
     
     async confirmation(tokenStr: string){
         const token = await this.tokenService.get(tokenStr);
+
+        console.log(token);
+
+
         if(!token){
             throw {id : 7};
         }
