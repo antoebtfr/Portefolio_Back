@@ -9,6 +9,7 @@ import { RessourceController } from './controllers/ressource.controller';
 import { TokenController } from './controllers/token.controller';
 import { TypeController } from './controllers/type.controller';
 import { AuthController } from './controllers/auth.controller';
+import { ConnectionController } from './controllers/connection.controller';
 
 
 
@@ -26,6 +27,7 @@ async function startServer() {
     TokenController(app);
     TypeController(app);
     AuthController(app);
+    ConnectionController(app);
 
     try {
         app.listen(PORT, () => {
