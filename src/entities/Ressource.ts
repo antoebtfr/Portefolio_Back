@@ -17,10 +17,10 @@ export class Ressource {
     @Column({ type: 'int' })
     typeId?: Type;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'varchar', length: 1000, default: '' })
     cont?: string;
 
-    @Column({ type: 'varchar', length: 50, default: '' })
+    @Column({ type: 'varchar', length: 1000, default: '' })
     img?: string;
 
     @Column({ type: 'varchar', length: 50, default: '' })
