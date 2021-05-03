@@ -9,5 +9,10 @@ export const ConnectionController = (app: Application) => {
         res.send(await service.getAll());
     })
 
+    router.post('', async (req: Request, res: Response) => {
+        
+        res.send(await service.logIp(req.body));
+    })
+
     app.use('/connection-log', router);
 }
